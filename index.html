@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>健康経営サポート 庵原航｜姿勢・動作と身体負担の専門家による健康支援サービス</title>
+<meta name="description" content="理学療法士が現場を訪問し、働く人の身体負担を見える化。腰痛・転倒予防につながる改善をご提案します。建設業・製造業などの職場改善、健康経営支援に対応。">
+
+<!-- OGP（SNS・LINEでシェアされたときの表示） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="生き生きと働き続けられる体づくりを、専門家がお手伝いします。">
+<meta property="og:description" content="理学療法士が現場を訪問し、身体負担を見える化。腰痛・転倒予防につながる改善をご提案します。">
+<meta property="og:image" content="images/ogp.jpg">
+
+<!-- 見出し用フォント（明朝）と本文用フォント -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Barlow:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   カラー設定：ここだけ変えれば全体の色が変わります
+   使用色は「白 ／ ブルー ／ 墨色」の3色のみ。
+   薄いブルーはすべて同じブルーの濃度違いです。
+   ============================================================ */
+:root{
+  --blue:       #1B4F8A;
+  --blue-dark:  #123963;
+  --blue-deep:  #0D2B4B;
+  --blue-mid:   #2E6BAF;
+  --blue-tint:  #EAF1F9;
+  --blue-tint2: #F6F9FD;
+  --blue-line:  #D3E1F1;
+
+  --ink:      #1F262C;
+  --ink-sub:  #59636C;
+  --ink-thin: #8A959E;
+
+  --white: #FFFFFF;
+  --max:   1080px;
+
+  --shadow-s: 0 2px 10px rgba(13,43,75,.06);
+  --shadow-m: 0 10px 30px rgba(13,43,75,.09);
+  --shadow-l: 0 22px 60px rgba(13,43,75,.14);
+
+  --serif: "Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:  "Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  --num:   "Barlow","Noto Sans JP",sans-serif;
+}
+
+/* ---------- ベース ---------- */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.95;
+  font-size:16px;
+  letter-spacing:.03em;
+  overflow-x:hidden;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:var(--blue); }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; position:relative; z-index:2; }
+section{ padding:96px 0; position:relative; }
+
+/* 背景バリエーション */
+.bg-tint{ background:var(--blue-tint2); }
+.bg-tint::before{                     /* 極薄のドット模様で質感を出す */
+  content:""; position:absolute; inset:0; z-index:0;
+  background-image:radial-gradient(var(--blue-line) 1px, transparent 1px);
+  background-size:22px 22px; opacity:.5;
+}
+
+/* ---------- 見出し ---------- */
+.sec-head{ text-align:center; margin:0 0 56px; }
+.sec-head .en{
+  display:inline-block; font-family:var(--num); font-size:.74rem;
+  letter-spacing:.28em; font-weight:600; color:var(--blue-mid);
+  margin-bottom:12px; padding-left:.28em;
+}
+.sec-head .en::before{
+  content:""; display:inline-block; width:22px; height:1px;
+  background:var(--blue-mid); vertical-align:middle; margin-right:12px;
+  transform:translateY(-1px);
+}
+.sec-head .en::after{
+  content:""; display:inline-block; width:22px; height:1px;
+  background:var(--blue-mid); vertical-align:middle; margin-left:12px;
+  transform:translateY(-1px);
+}
+.sec-head h2{
+  font-family:var(--serif); font-weight:700;
+  font-size:1.72rem; line-height:1.65; margin:0;
+  letter-spacing:.04em;
+}
+.sec-head h2 em{ font-style:normal; color:var(--blue); }
+.sec-head .sub{ margin:14px 0 0; font-size:.94rem; color:var(--ink-sub); }
+.sp-br{ display:none; }              /* スマホでのみ改行する */
+
+/* ---------- ボタン ---------- */
+.btn{
+  position:relative; overflow:hidden;
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  background:linear-gradient(135deg,var(--blue-mid) 0%,var(--blue) 55%,var(--blue-dark) 100%);
+  color:#fff; text-decoration:none;
+  padding:20px 40px; border-radius:999px; font-weight:700; font-size:1.04rem;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(27,79,138,.28);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.btn::after{                          /* ホバー時に光が走る */
+  content:""; position:absolute; top:0; left:-120%;
+  width:60%; height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+  transition:left .55s ease;
+}
+.btn:hover{ transform:translateY(-3px); box-shadow:0 16px 34px rgba(27,79,138,.34); }
+.btn:hover::after{ left:130%; }
+.btn .arrow{
+  display:inline-flex; width:24px; height:24px; border-radius:50%;
+  background:rgba(255,255,255,.2); align-items:center; justify-content:center;
+  flex:0 0 auto;
+}
+.btn .arrow svg{ width:13px; height:13px; }
+.btn-note{ font-size:.82rem; color:var(--ink-sub); margin:14px 0 0; letter-spacing:.02em; }
+
+/* ---------- 写真の差し替え枠 ---------- */
+.photo{
+  position:relative; width:100%; aspect-ratio:4/3;
+  background:var(--blue-tint);
+  border-radius:6px; overflow:hidden;
+  box-shadow:var(--shadow-l);
+}
+.photo img{ width:100%; height:100%; object-fit:cover; }
+.photo .ph-note{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px;
+  color:#9DAEC2; font-size:.8rem; text-align:center; padding:24px; line-height:1.8;
+  background:
+    linear-gradient(135deg,var(--blue-tint) 0%,#DFEAF6 100%);
+}
+.photo .ph-note strong{ font-size:.92rem; color:var(--blue-mid); letter-spacing:.06em; }
+.photo.has-img .ph-note{ display:none; }
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+.site-header{
+  position:sticky; top:0; z-index:80;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:saturate(180%) blur(10px);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid transparent;
+  transition:box-shadow .3s ease, border-color .3s ease;
+}
+.site-header.scrolled{ box-shadow:var(--shadow-s); border-bottom-color:var(--blue-line); }
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between; height:72px;
+}
+.logo{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+.logo .mark{
+  width:36px; height:36px; border-radius:9px; flex:0 0 auto;
+  background:linear-gradient(140deg,var(--blue-mid),var(--blue-dark));
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+.logo .mark svg{ width:20px; height:20px; }
+.logo .txt{ font-family:var(--serif); font-weight:700; font-size:1.05rem; letter-spacing:.06em; line-height:1.4; }
+.logo .txt small{ display:block; font-family:var(--sans); font-size:.66rem; color:var(--ink-thin); font-weight:400; letter-spacing:.04em; }
+.header-cta{
+  background:var(--blue); color:#fff; text-decoration:none;
+  padding:11px 24px; border-radius:999px; font-size:.84rem; font-weight:700;
+  white-space:nowrap; letter-spacing:.04em; transition:.25s;
+  box-shadow:0 4px 14px rgba(27,79,138,.22);
+}
+.header-cta:hover{ background:var(--blue-dark); transform:translateY(-2px); }
+
+/* ============================================================
+   ① ファーストビュー
+   ============================================================ */
+.hero{ padding:0; overflow:hidden; }
+.hero::before{                       /* 右上の大きな淡いブルー面 */
+  content:""; position:absolute; top:-18%; right:-14%;
+  width:62vw; height:120%; z-index:0;
+  background:linear-gradient(160deg,var(--blue-tint) 0%,rgba(234,241,249,0) 72%);
+  border-radius:0 0 0 42% ;
+}
+.hero::after{                        /* 左下の細い装飾ライン */
+  content:""; position:absolute; left:-60px; bottom:8%;
+  width:220px; height:220px; z-index:0;
+  border:1px solid var(--blue-line); border-radius:50%;
+  opacity:.7;
+}
+.hero-inner{
+  max-width:var(--max); margin:0 auto; padding:76px 24px 92px;
+  display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center;
+  position:relative; z-index:2;
+}
+.hero-badge{
+  display:inline-flex; align-items:center; gap:9px;
+  background:#fff; border:1px solid var(--blue-line);
+  color:var(--blue); font-size:.78rem; font-weight:700; letter-spacing:.09em;
+  padding:8px 18px; border-radius:999px; margin-bottom:26px;
+  box-shadow:var(--shadow-s);
+}
+.hero-badge .dot{ width:7px; height:7px; border-radius:50%; background:var(--blue-mid); }
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size:2.35rem; line-height:1.62; margin:0 0 26px;
+  letter-spacing:.045em;
+}
+.hero h1 .accent{
+  color:var(--blue); position:relative; white-space:nowrap;
+}
+.hero h1 .accent::after{             /* 手書き風の下線 */
+  content:""; position:absolute; left:0; right:0; bottom:.02em; height:.34em;
+  background:linear-gradient(90deg,rgba(46,107,175,.16),rgba(46,107,175,.06));
+  z-index:-1; border-radius:3px;
+}
+.hero .lead{ font-size:1.04rem; color:var(--ink-sub); margin:0 0 30px; }
+.hero-tags{ list-style:none; padding:0; margin:0 0 36px; display:flex; flex-wrap:wrap; gap:9px; }
+.hero-tags li{
+  font-size:.79rem; color:var(--blue); background:#fff;
+  border:1px solid var(--blue-line); border-radius:999px; padding:6px 15px;
+  line-height:1.5; font-weight:600; letter-spacing:.03em;
+}
+
+/* 写真まわりの装飾 */
+.hero-visual{ position:relative; }
+.hero-visual::before{                /* 写真の背後にずらした枠 */
+  content:""; position:absolute; inset:22px -22px -22px 22px;
+  border:1px solid var(--blue-mid); border-radius:6px; opacity:.35; z-index:0;
+}
+.hero-visual .photo{ position:relative; z-index:1; }
+.hero-caption{
+  position:absolute; z-index:2; left:-26px; bottom:-26px;
+  background:#fff; border-radius:6px; padding:18px 24px;
+  box-shadow:var(--shadow-m); border-left:3px solid var(--blue);
+  max-width:230px;
+}
+.hero-caption .k{
+  font-family:var(--num); font-size:1.85rem; font-weight:700; color:var(--blue);
+  line-height:1.1; letter-spacing:.02em;
+}
+.hero-caption .k span{ font-size:.9rem; margin-left:3px; }
+.hero-caption p{ margin:4px 0 0; font-size:.78rem; color:var(--ink-sub); line-height:1.6; }
+
+/* ============================================================
+   ② お悩み
+   ============================================================ */
+.worry-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.worry{
+  background:#fff; border:1px solid var(--blue-line); border-radius:6px;
+  padding:30px 24px; display:flex; gap:16px; align-items:flex-start;
+  box-shadow:var(--shadow-s);
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.worry:hover{ transform:translateY(-4px); box-shadow:var(--shadow-m); border-color:var(--blue-mid); }
+.worry .ico{
+  flex:0 0 auto; width:46px; height:46px; border-radius:50%;
+  background:var(--blue-tint); color:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  transition:background .3s ease, color .3s ease;
+}
+.worry:hover .ico{ background:var(--blue); color:#fff; }
+.worry .ico svg{ width:23px; height:23px; }
+.worry p{ margin:0; font-size:.96rem; font-weight:700; line-height:1.75; letter-spacing:.02em; }
+
+.worry-conclusion{
+  position:relative; margin:56px auto 0; max-width:700px; text-align:center;
+  background:#fff; border-radius:6px; padding:38px 30px 32px;
+  box-shadow:var(--shadow-m);
+}
+.worry-conclusion::before{           /* 上部の下向き三角 */
+  content:""; position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  border-left:16px solid transparent; border-right:16px solid transparent;
+  border-top:0; border-bottom:14px solid var(--blue);
+}
+.worry-conclusion::after{
+  content:""; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,var(--blue-mid),var(--blue-dark));
+  border-radius:6px 6px 0 0;
+}
+.worry-conclusion p{
+  margin:0; font-family:var(--serif); font-size:1.16rem; font-weight:700; line-height:1.85;
+  letter-spacing:.04em;
+}
+.worry-conclusion .small{
+  font-family:var(--sans); font-size:.9rem; font-weight:400;
+  color:var(--ink-sub); margin-top:10px; letter-spacing:.02em;
+}
+
+/* ============================================================
+   ③ サービス
+   ============================================================ */
+.service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.service{
+  position:relative; overflow:hidden;
+  border:1px solid var(--blue-line); border-radius:6px; padding:44px 28px 36px;
+  background:#fff; text-align:center; box-shadow:var(--shadow-s);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.service::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,var(--blue-mid),var(--blue-dark));
+  transform:scaleX(0); transform-origin:left; transition:transform .4s ease;
+}
+.service:hover{ transform:translateY(-6px); box-shadow:var(--shadow-m); }
+.service:hover::before{ transform:scaleX(1); }
+.service .num{
+  position:absolute; top:14px; right:20px;
+  font-family:var(--num); font-size:2.6rem; font-weight:700;
+  color:var(--blue-tint); line-height:1; letter-spacing:.02em;
+}
+.service .ico{
+  width:76px; height:76px; margin:0 auto 20px; border-radius:50%;
+  background:linear-gradient(140deg,var(--blue-tint),#fff);
+  border:1px solid var(--blue-line); color:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1;
+}
+.service .ico svg{ width:34px; height:34px; }
+.service h3{
+  font-family:var(--serif); font-size:1.16rem; margin:0 0 8px; font-weight:700;
+  letter-spacing:.05em;
+}
+.service .h3en{
+  display:block; font-family:var(--num); font-size:.68rem; letter-spacing:.2em;
+  color:var(--blue-mid); font-weight:600; margin-bottom:16px;
+}
+.service p{ margin:0; font-size:.93rem; color:var(--ink-sub); text-align:left; }
+
+.example{
+  margin-top:52px; border-radius:6px; padding:36px 28px;
+  background:linear-gradient(140deg,var(--blue-tint) 0%,var(--blue-tint2) 100%);
+  border:1px solid var(--blue-line);
+}
+.example h3{
+  margin:0 0 20px; font-size:1rem; text-align:center; font-weight:700;
+  font-family:var(--serif); letter-spacing:.08em;
+}
+.example ul{
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-wrap:wrap; gap:11px; justify-content:center;
+}
+.example li{
+  background:#fff; border:1px solid var(--blue-line); border-radius:999px;
+  padding:10px 22px; font-size:.9rem; font-weight:700; color:var(--blue);
+  letter-spacing:.03em; box-shadow:var(--shadow-s);
+  display:flex; align-items:center; gap:8px;
+  transition:.25s;
+}
+.example li::before{
+  content:""; width:6px; height:6px; border-radius:50%; background:var(--blue-mid);
+}
+.example li:hover{ transform:translateY(-2px); box-shadow:var(--shadow-m); }
+
+/* ============================================================
+   ④ 選ばれる理由
+   ============================================================ */
+.reason-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+.reason{
+  position:relative; background:#fff; border-radius:6px; padding:34px 32px 34px 34px;
+  display:flex; gap:22px; align-items:flex-start;
+  box-shadow:var(--shadow-s); border:1px solid var(--blue-line);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.reason:hover{ transform:translateY(-4px); box-shadow:var(--shadow-m); }
+.reason .num{
+  flex:0 0 auto; width:52px; height:52px; border-radius:50%;
+  background:linear-gradient(140deg,var(--blue-mid),var(--blue-dark)); color:#fff;
+  font-family:var(--num); font-weight:700; font-size:1.15rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 16px rgba(27,79,138,.25);
+}
+.reason h3{
+  margin:0 0 10px; font-family:var(--serif); font-size:1.1rem; font-weight:700;
+  line-height:1.65; letter-spacing:.04em;
+}
+.reason p{ margin:0; font-size:.92rem; color:var(--ink-sub); }
+.reason .lic{
+  list-style:none; margin:12px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px;
+}
+.reason .lic li{
+  font-size:.74rem; font-weight:600; color:var(--blue);
+  background:var(--blue-tint); border-radius:4px; padding:4px 10px; line-height:1.5;
+}
+
+/* ============================================================
+   ⑤ 流れ
+   ============================================================ */
+.flow{ max-width:760px; margin:0 auto; }
+.flow-item{
+  display:flex; gap:26px; align-items:flex-start;
+  position:relative; padding-bottom:34px;
+}
+.flow-item:last-child{ padding-bottom:0; }
+.flow-item::before{
+  content:""; position:absolute; left:27px; top:58px; bottom:0;
+  width:2px; background:linear-gradient(180deg,var(--blue-mid),var(--blue-line));
+}
+.flow-item:last-child::before{ display:none; }
+.flow-num{
+  flex:0 0 auto; width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(140deg,var(--blue-mid),var(--blue-dark)); color:#fff;
+  font-family:var(--num); font-weight:700; font-size:1.2rem;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1;
+  box-shadow:0 6px 18px rgba(27,79,138,.25);
+  border:4px solid #fff;
+}
+.flow-item.optional .flow-num{
+  background:#fff; color:var(--blue); border:2px solid var(--blue);
+  box-shadow:var(--shadow-s);
+}
+.flow-body{
+  padding:16px 24px; background:#fff; border-radius:6px; flex:1;
+  border:1px solid var(--blue-line); box-shadow:var(--shadow-s);
+}
+.flow-body h3{
+  margin:0 0 6px; font-family:var(--serif); font-size:1.08rem; font-weight:700;
+  letter-spacing:.05em;
+}
+.flow-body h3 span{ font-family:var(--sans); font-size:.78rem; font-weight:400; color:var(--ink-sub); }
+.flow-body p{ margin:0; font-size:.92rem; color:var(--ink-sub); }
+
+/* ============================================================
+   ⑥ プロフィール
+   ============================================================ */
+.profile{
+  display:grid; grid-template-columns:320px 1fr; gap:60px; align-items:start;
+  max-width:920px; margin:0 auto;
+}
+.profile-visual{ position:relative; }
+.profile-visual::before{
+  content:""; position:absolute; inset:-16px 16px 16px -16px;
+  border:1px solid var(--blue-mid); border-radius:6px; opacity:.35;
+}
+.profile .photo{ aspect-ratio:3/4; position:relative; z-index:1; }
+.profile-quote{
+  position:absolute; z-index:2; right:-18px; bottom:-20px;
+  background:linear-gradient(140deg,var(--blue-mid),var(--blue-dark)); color:#fff;
+  padding:12px 18px; border-radius:6px; box-shadow:var(--shadow-m);
+  font-family:var(--num); font-size:.78rem; font-weight:600; letter-spacing:.14em;
+}
+.profile-name{
+  margin:0 0 6px; font-family:var(--serif); font-size:1.7rem; font-weight:700;
+  letter-spacing:.08em;
+}
+.profile-name .ruby{
+  font-family:var(--num); font-size:.76rem; font-weight:500;
+  color:var(--ink-thin); letter-spacing:.16em; margin-left:14px;
+}
+.profile-role{
+  margin:0 0 26px; font-size:.9rem; color:var(--blue); font-weight:700; letter-spacing:.09em;
+  display:flex; align-items:center; gap:10px;
+}
+.profile-role::after{ content:""; flex:1; height:1px; background:var(--blue-line); }
+.profile-msg{ margin:0 0 30px; font-size:1rem; }
+.profile-philosophy{
+  position:relative; background:linear-gradient(140deg,var(--blue-tint),var(--blue-tint2));
+  border-left:4px solid var(--blue);
+  padding:22px 26px; margin:0 0 30px; border-radius:0 6px 6px 0;
+}
+.profile-philosophy::before{
+  content:"“"; position:absolute; top:-6px; right:16px;
+  font-family:var(--serif); font-size:3.4rem; color:var(--blue-line); line-height:1;
+}
+.profile-philosophy p{
+  margin:0; font-family:var(--serif); font-weight:700; font-size:1.14rem; letter-spacing:.06em;
+}
+.profile-philosophy span{
+  display:block; font-family:var(--sans); font-size:.84rem; font-weight:400;
+  color:var(--ink-sub); margin-top:6px; letter-spacing:.02em;
+}
+.profile dl{ margin:0; border-top:1px solid var(--blue-line); }
+.profile dl div{
+  display:grid; grid-template-columns:112px 1fr; gap:18px;
+  border-bottom:1px solid var(--blue-line); padding:16px 2px;
+}
+.profile dt{ font-size:.84rem; font-weight:700; color:var(--blue); letter-spacing:.06em; }
+.profile dd{ margin:0; font-size:.92rem; }
+.profile dd ul{ margin:0; padding:0; list-style:none; }
+.profile dd li{ margin-bottom:4px; padding-left:1.2em; position:relative; }
+.profile dd li::before{
+  content:""; position:absolute; left:0; top:.72em;
+  width:6px; height:6px; border-radius:50%; background:var(--blue-mid);
+}
+
+/* ============================================================
+   ⑦ お問い合わせ
+   ============================================================ */
+.contact{
+  background:linear-gradient(150deg,var(--blue-mid) 0%,var(--blue) 42%,var(--blue-deep) 100%);
+  color:#fff; overflow:hidden;
+}
+.contact::before{
+  content:""; position:absolute; inset:0; z-index:0; opacity:.16;
+  background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.contact::after{
+  content:""; position:absolute; right:-140px; top:-140px;
+  width:460px; height:460px; border-radius:50%; z-index:0;
+  background:radial-gradient(circle,rgba(255,255,255,.12),transparent 68%);
+}
+.contact .sec-head h2{ color:#fff; }
+.contact .sec-head .en{ color:#B9D2EE; }
+.contact .sec-head .en::before,
+.contact .sec-head .en::after{ background:#B9D2EE; }
+.contact-lead{ text-align:center; margin:0 0 44px; font-size:1rem; color:#E1EDF9; }
+
+.contact-main{
+  background:#fff; border-radius:8px; padding:46px 36px; text-align:center;
+  max-width:700px; margin:0 auto 24px; color:var(--ink);
+  box-shadow:0 26px 60px rgba(6,25,45,.28);
+}
+.contact-main .btn{ width:100%; max-width:440px; }
+.contact-qr{
+  margin-top:30px; padding-top:30px; border-top:1px dashed var(--blue-line);
+  display:flex; gap:24px; align-items:center; justify-content:center; flex-wrap:wrap;
+}
+.contact-qr .qr{
+  width:118px; height:118px; background:var(--blue-tint2);
+  border:1px solid var(--blue-line); border-radius:6px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.68rem; color:#9DAEC2; text-align:center; padding:8px; line-height:1.6;
+  flex:0 0 auto; overflow:hidden;
+}
+.contact-qr .qr.has-img span{ display:none; }
+.contact-qr .qr img{ width:100%; height:100%; object-fit:contain; }
+.contact-qr p{ margin:0; font-size:.88rem; color:var(--ink-sub); text-align:left; }
+
+.contact-sub{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:700px; margin:0 auto;
+}
+.contact-card{
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3);
+  border-radius:8px; padding:26px 22px; text-align:center;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  transition:.25s;
+}
+.contact-card:hover{ background:rgba(255,255,255,.17); transform:translateY(-3px); }
+.contact-card .label{
+  font-family:var(--num); font-size:.72rem; letter-spacing:.22em; color:#B9D2EE; margin:0 0 8px;
+}
+.contact-card a, .contact-card .val{
+  color:#fff; text-decoration:none; font-size:1.14rem; font-weight:700; word-break:break-all;
+  letter-spacing:.03em;
+}
+.contact-card a:hover{ text-decoration:underline; }
+.contact-card .note{ font-size:.76rem; color:#C9DDF1; margin:8px 0 0; }
+
+/* ---------- フッター ---------- */
+footer{
+  background:#0B1E33; color:#94A8BD; padding:44px 0 36px; text-align:center; font-size:.82rem;
+}
+footer .fmark{
+  width:44px; height:44px; margin:0 auto 14px; border-radius:11px;
+  background:linear-gradient(140deg,var(--blue-mid),var(--blue-dark));
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+footer .fmark svg{ width:23px; height:23px; }
+footer .fname{ color:#fff; font-family:var(--serif); font-weight:700; font-size:1.05rem; margin:0 0 6px; letter-spacing:.1em; }
+footer p{ margin:0 0 4px; }
+footer .fnav{
+  list-style:none; margin:22px 0 0; padding:0;
+  display:flex; flex-wrap:wrap; gap:10px 26px; justify-content:center;
+}
+footer .fnav a{
+  color:#B3C4D5; text-decoration:none; font-size:.8rem; letter-spacing:.04em;
+  transition:color .25s ease;
+}
+footer .fnav a:hover{ color:#fff; text-decoration:underline; }
+footer .copy{ margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); font-size:.74rem; color:#6E839A; }
+
+/* ---------- スマホ固定CTA ---------- */
+.fixed-cta{ display:none; }
+
+/* ============================================================
+   スクロール時のふわっと表示
+   ============================================================ */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.is-in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ============================================================
+   レスポンシブ
+   ============================================================ */
+@media (max-width:900px){
+  .hero-inner{ grid-template-columns:1fr; gap:40px; padding:48px 24px 76px; }
+  .hero-visual{ order:-1; }
+  .hero-visual .photo{ aspect-ratio:16/10; }
+  .hero-visual::before{ inset:16px -16px -16px 16px; }
+  .hero-caption{ left:auto; right:-10px; bottom:-22px; }
+  .worry-grid{ grid-template-columns:repeat(2,1fr); }
+  .service-grid{ grid-template-columns:1fr; }
+  .reason-list{ grid-template-columns:1fr; }
+  .profile{ grid-template-columns:1fr; gap:44px; max-width:480px; }
+  .profile .photo{ aspect-ratio:4/3; }
+}
+@media (max-width:600px){
+  body{ font-size:15.5px; line-height:1.88; padding-bottom:82px; }
+  section{ padding:64px 0; }
+  .sp-br{ display:inline; }
+  .site-header .wrap{ height:62px; }
+  .header-cta{ display:none; }
+  .logo .txt{ font-size:.98rem; }
+
+  .hero h1{ font-size:1.62rem; line-height:1.65; }
+  .hero .lead{ font-size:.95rem; }
+  .hero-badge{ font-size:.72rem; padding:7px 14px; margin-bottom:20px; }
+  .hero-caption{ position:static; margin:26px 0 0; max-width:none; display:flex; align-items:center; gap:16px; }
+  .hero-caption p{ margin:0; }
+  .hero-visual::before{ display:none; }
+
+  .sec-head{ margin-bottom:36px; }
+  .sec-head h2{ font-size:1.32rem; }
+
+  .worry-grid{ grid-template-columns:1fr; gap:12px; }
+  .worry{ padding:20px 18px; gap:14px; }
+  .worry .ico{ width:40px; height:40px; }
+  .worry .ico svg{ width:20px; height:20px; }
+  .worry-conclusion{ padding:30px 20px 26px; }
+  .worry-conclusion p{ font-size:1.05rem; }
+
+  .service{ padding:36px 22px 30px; }
+  .example{ padding:28px 18px; }
+  .example li{ padding:9px 18px; font-size:.86rem; }
+
+  .reason{ padding:26px 22px; gap:16px; }
+  .reason .num{ width:44px; height:44px; font-size:1rem; }
+
+  .flow-item{ gap:16px; padding-bottom:24px; }
+  .flow-num{ width:48px; height:48px; font-size:1.05rem; }
+  .flow-item::before{ left:23px; top:50px; }
+  .flow-body{ padding:14px 18px; }
+
+  .profile-name{ font-size:1.42rem; }
+  .profile dl div{ grid-template-columns:1fr; gap:4px; }
+
+  .contact-main{ padding:32px 20px; }
+  .contact-sub{ grid-template-columns:1fr; }
+  .contact-qr p{ text-align:center; }
+  .btn{ width:100%; padding:17px 20px; font-size:.98rem; }
+
+  .fixed-cta{
+    display:block; position:fixed; left:0; right:0; bottom:0; z-index:90;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    border-top:1px solid var(--blue-line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 18px rgba(13,43,75,.1);
+  }
+  .fixed-cta .btn{ padding:15px; font-size:.95rem; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= ヘッダー ================= -->
+<header class="site-header" id="header">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l2-5 3 10 2.5-5H21"/></svg>
+      </span>
+      <span class="txt">
+        健康経営サポート 庵原航
+        <small>姿勢・動作と身体負担の専門家による健康支援サービス</small>
+      </span>
+    </a>
+    <a href="#contact" class="header-cta">職場の困りごとについて相談する</a>
+  </div>
+</header>
+
+<!-- ================= ① ファーストビュー ================= -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="reveal">
+      <span class="hero-badge"><span class="dot"></span>現場に寄り添った健康支援</span>
+      <h1>生き生きと働き続けられる体づくりを、<br><span class="accent">専門家</span>がお手伝いします。</h1>
+      <p class="lead">
+        理学療法士が現場を訪問し、身体負担を見える化。<br>
+        腰痛・転倒予防につながる改善をご提案します。
+      </p>
+      <ul class="hero-tags">
+        <li>臨床経験16年以上</li>
+        <li>産業保健資格を保有</li>
+        <li>茨城県県南エリア</li>
+      </ul>
+      <a href="#contact" class="btn">
+        職場の困りごとについて相談する
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <p class="btn-note">ご相談・お見積りは無料です。まずは現状をお聞かせください。</p>
+    </div>
+
+    <div class="hero-visual reveal">
+      <!-- 写真差し替え：images/hero.jpg を置くだけで表示されます -->
+      <div class="photo">
+        <img src="images/hero.jpg" alt="現場で働く様子" onerror="this.style.display='none'" onload="this.parentNode.classList.add('has-img')">
+        <div class="ph-note">
+          <strong>写真①（ファーストビュー）</strong>
+          <span>images/hero.jpg<br>横長・現場／働く人／相談風景のいずれか1枚<br>推奨 1200×900px 程度</span>
+        </div>
+      </div>
+      <div class="hero-caption">
+        <div class="k">16<span>年</span></div>
+        <p>総合病院での<br>理学療法士としての臨床経験</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ② お悩み ================= -->
+<section class="bg-tint" id="worry">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">PROBLEM</span>
+      <h2>このようなお悩みは<br class="sp-br">ありませんか</h2>
+    </div>
+
+    <div class="worry-grid">
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><path d="M12 8v6"/><path d="M9 10.5h6"/><path d="M12 14l-2.5 7M12 14l2.5 7"/></svg></div>
+        <p>腰痛を訴える社員が多い</p>
+      </div>
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V11"/><path d="M11 20V7"/><path d="M16 20v-6"/><path d="M21 20V4"/></svg></div>
+        <p>高齢化で身体負担が増えている</p>
+      </div>
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.6 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+        <p>転倒災害を減らしたい</p>
+      </div>
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M9.2 9.2a2.9 2.9 0 0 1 5.6 1c0 1.9-2.8 2.4-2.8 2.4"/><path d="M12 17h.01"/></svg></div>
+        <p>健康教育を何から始めればよいかわからない</p>
+      </div>
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 13.6c1.2-1.2 2-2.7 2-4.4a5.6 5.6 0 0 0-9.6-3.9"/><path d="M12.5 14.9c0 2.9-2.4 5.3-5.4 5.3-.9 0-1.8-.2-2.6-.7L2 20.4l.9-2.6A5.3 5.3 0 1 1 12.5 15Z"/></svg></div>
+        <p>健康経営に取り組みたい</p>
+      </div>
+      <div class="worry reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 18.4V20"/><circle cx="9.5" cy="7.6" r="3.4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg></div>
+        <p>外部の専門家へ相談したい</p>
+      </div>
+    </div>
+
+    <div class="worry-conclusion reveal">
+      <p>そんな課題に対し、現場を確認しながら改善を支援します。</p>
+      <p class="small">机上の提案ではなく、実際の作業を見たうえでご提案します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ③ サービス ================= -->
+<section id="service">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">SERVICE</span>
+      <h2><em>身体負担の見える化</em>から<br class="sp-br">改善までを一貫して</h2>
+      <p class="sub">現場を見て、整理して、提案する。この3ステップが基本です。</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service reveal">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20 20-4.4-4.4"/><path d="M10.8 8v5.6"/><path d="M8 10.8h5.6"/></svg></div>
+        <h3>現場視察</h3>
+        <span class="h3en">VISIT</span>
+        <p>実際の作業環境や動作を確認します。どの工程で身体に負担がかかっているのかを、その場で確認させていただきます。</p>
+      </div>
+      <div class="service reveal">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16.4a1.6 1.6 0 0 0 1.6 1.6H21"/><path d="m7 15 3.4-4 3 2.6L18 8"/></svg></div>
+        <h3>身体負担の見える化</h3>
+        <span class="h3en">ANALYSIS</span>
+        <p>姿勢・動作の分析をもとに、身体への負担と改善ポイントを整理してお示しします。感覚ではなく根拠でお伝えします。</p>
+      </div>
+      <div class="service reveal">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.5.4.8 1 .8 1.7h6c0-.7.3-1.3.8-1.7A6.5 6.5 0 0 0 12 2.5Z"/></svg></div>
+        <h3>改善提案・健康教育</h3>
+        <span class="h3en">SUPPORT</span>
+        <p>現場に合わせた作業改善のご提案や、社員向けセミナーを実施します。すぐ取り組める内容からご提案します。</p>
+      </div>
+    </div>
+
+    <div class="example reveal">
+      <h3>対応例</h3>
+      <ul>
+        <li>現場視察</li>
+        <li>健康セミナー</li>
+        <li>体力測定</li>
+        <li>健康経営支援</li>
+        <li>職場改善提案</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ④ 選ばれる理由 ================= -->
+<section class="bg-tint" id="reason">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">REASON</span>
+      <h2>選ばれる理由</h2>
+    </div>
+
+    <div class="reason-list">
+      <div class="reason reveal">
+        <div class="num">01</div>
+        <div>
+          <h3>総合病院で16年以上の臨床経験</h3>
+          <p>入院・外来を通じて疾患全般に対応してきました。腰痛をはじめとする慢性疼痛への対応を専門としています。</p>
+        </div>
+      </div>
+      <div class="reason reveal">
+        <div class="num">02</div>
+        <div>
+          <h3>理学療法士による姿勢・動作の分析</h3>
+          <p>身体の動きを評価する国家資格者が、作業姿勢や動作から負担のかかり方を見極めます。</p>
+        </div>
+      </div>
+      <div class="reason reveal">
+        <div class="num">03</div>
+        <div>
+          <h3>産業保健分野の資格を保有</h3>
+          <p>医療と職場、双方の視点からご提案できることが強みです。</p>
+          <ul class="lic">
+            <li>第一種衛生管理者</li>
+            <li>健康経営エキスパートアドバイザー</li>
+            <li>作業管理士</li>
+            <li>両立支援コーディネーター</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reason reveal">
+        <div class="num">04</div>
+        <div>
+          <h3>地域企業に寄り添った支援</h3>
+          <p>一度きりの研修で終わらせず、現場の実情に合わせて継続的にご相談いただける関係づくりを大切にしています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ⑤ ご利用の流れ ================= -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">FLOW</span>
+      <h2>ご利用の流れ</h2>
+    </div>
+
+    <div class="flow">
+      <div class="flow-item reveal">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <h3>お問い合わせ</h3>
+          <p>フォーム・メール・お電話のいずれかでご連絡ください。</p>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <h3>ヒアリング</h3>
+          <p>職場の状況やお困りごとをお伺いします。オンラインでも対応します。</p>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <h3>現場視察</h3>
+          <p>実際の作業現場を訪問し、作業環境と動作を確認します。</p>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <h3>改善提案</h3>
+          <p>身体負担の整理結果と、現場に合わせた改善案をご報告します。</p>
+        </div>
+      </div>
+      <div class="flow-item optional reveal">
+        <div class="flow-num">5</div>
+        <div class="flow-body">
+          <h3>継続支援<span>（ご希望の企業様）</span></h3>
+          <p>セミナー・体力測定・健康経営支援など、必要に応じて継続的にお手伝いします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ⑥ プロフィール ================= -->
+<section class="bg-tint" id="profile">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">PROFILE</span>
+      <h2>ごあいさつ</h2>
+    </div>
+
+    <div class="profile">
+      <div class="profile-visual reveal">
+        <!-- 写真差し替え：images/profile.jpg を置くだけで表示されます -->
+        <div class="photo">
+          <img src="images/profile.jpg" alt="代表 顔写真" onerror="this.style.display='none'" onload="this.parentNode.classList.add('has-img')">
+          <div class="ph-note">
+            <strong>写真②（プロフィール）</strong>
+            <span>images/profile.jpg<br>縦長・上半身の顔写真<br>推奨 900×1200px 程度</span>
+          </div>
+        </div>
+        <div class="profile-quote">PHYSICAL THERAPIST</div>
+      </div>
+
+      <div class="reveal">
+        <p class="profile-name">庵原航<span class="ruby">Ihara Wataru</span></p>
+        <p class="profile-role">理学療法士 ／ 健康経営サポート 庵原航　代表</p>
+
+        <p class="profile-msg">
+          医療現場で培った経験を活かし、地域企業で働く人が安心して働き続けられる環境づくりを支援しています。
+          痛みや不調は、我慢して続けるほど回復に時間がかかります。
+          だからこそ、現場に出向いて「今の負担」を一緒に確認することから始めています。
+        </p>
+
+        <div class="profile-philosophy">
+          <p>地域社会に生きがいを。
+            <span>人は自分の役割を持ち、誰かとつながり、自分らしく生きられるときに健康になる。理学療法士として身体を支え、産業保健の実践者として働く人を支え、人が「生活する」意味を常に考えながら、地域社会に貢献していきます。</span>
+          </p>
+        </div>
+
+        <dl>
+          <div>
+            <dt>経歴</dt>
+            <dd>総合病院にて理学療法士として16年以上勤務。入院・外来を通じて疾患全般に対応し、特に外来リハビリテーション・慢性疼痛への対応を専門としています。</dd>
+          </div>
+          <div>
+            <dt>保有資格</dt>
+            <dd>
+              <ul>
+                <li>理学療法士</li>
+                <li>第一種衛生管理者</li>
+                <li>健康経営エキスパートアドバイザー</li>
+                <li>作業管理士</li>
+                <li>両立支援コーディネーター</li>
+                <li>オーソティックソサエティー認定FCT(C級)</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>対応分野</dt>
+            <dd>姿勢・動作・身体負担の分析／痛みの教育・管理／身体のコンディショニング(集団・個別)／健康経営推進／健康関連データの活用／考え方と行動のトレーニング／両立支援(治療・介護と仕事)／インソール作成</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ⑦ お問い合わせ ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">CONTACT</span>
+      <h2>まずはお気軽に<br class="sp-br">ご相談ください</h2>
+    </div>
+    <p class="contact-lead reveal">
+      「何を相談すればよいかわからない」という段階でも構いません。<br>
+      現場の状況をお聞かせいただくところから始めます。
+    </p>
+
+    <div class="contact-main reveal">
+      <!-- ▼ href="【Googleフォームのリンク】" を実際のURLに差し替えてください -->
+      <a href="https://forms.gle/BwKJfxCVPUy1c6Mq6" class="btn" target="_blank" rel="noopener">
+        お問い合わせフォームへ進む
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <p class="btn-note">
+        ご相談・お見積りは無料です／通常2〜3営業日以内にご返信します<br>
+        送信の前に<a href="privacy.html">プライバシーポリシー</a>をご確認ください。
+      </p>
+
+      <div class="contact-qr">
+        <!-- QR画像差し替え：images/qr.png を置くだけで表示されます -->
+        <div class="qr">
+          <img src="images/qr.png" alt="お問い合わせフォームQRコード" onerror="this.style.display='none'" onload="this.parentNode.classList.add('has-img')">
+          <span>QRコード<br>images/qr.png</span>
+        </div>
+        <p>スマートフォンで読み取ると<br>お問い合わせフォームが開きます。<br>名刺・チラシからのご連絡もこちらへ。</p>
+      </div>
+    </div>
+
+    <div class="contact-sub">
+      <div class="contact-card reveal">
+        <p class="label">MAIL</p>
+        <a href="mailto:w5a8t4a1r7u@gmail.com">w5a8t4a1r7u@gmail.com</a>
+        <p class="note">24時間受付</p>
+      </div>
+      <div class="contact-card reveal">
+        <p class="label">TEL</p>
+        <a href="tel:09097753509">09097753509</a>
+        <p class="note">月〜土 9：00〜18：00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= フッター ================= -->
+<footer>
+  <div class="wrap">
+    <div class="fmark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l2-5 3 10 2.5-5H21"/></svg>
+    </div>
+    <p class="fname">健康経営サポート 庵原航</p>
+    <p>理学療法士による職場の身体負担改善サポート</p>
+    <p>茨城県牛久市／対応エリア：茨城県県南エリア</p>
+    <ul class="fnav">
+      <li><a href="#service">サービス内容</a></li>
+      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+      <li><a href="privacy.html">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copy">&copy; <span id="year">2026</span> 健康経営サポート 庵原航</p>
+  </div>
+</footer>
+
+<!-- スマホ用 固定CTA -->
+<div class="fixed-cta">
+  <a href="#contact" class="btn">現場の困りごとについて相談する</a>
+</div>
+
+<script>
+  // 年号の自動更新
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ヘッダーの影（スクロール後に表示）
+  var header = document.getElementById('header');
+  var onScroll = function(){
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // スクロールでふわっと表示
+  var targets = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i * 70) + 'ms';
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add('is-in'); });
+  }
+</script>
+
+</body>
+</html>
